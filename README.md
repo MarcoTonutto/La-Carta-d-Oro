@@ -32,12 +32,20 @@ Apri [http://localhost:5173](http://localhost:5173).
 
 1. Crea un repository GitHub (il nome del repo deve coincidere con il `base` in `vite.config.ts`, es. `La-Carta-d-Oro`)
 2. Push del codice sul branch `main`
-3. Vai in **Settings → Pages** e imposta **Source: GitHub Actions**
-4. Il workflow `.github/workflows/deploy.yml` builda e pubblica automaticamente
+3. Configura GitHub Pages **una sola volta**:
+   - Vai in **Settings → Pages → Build and deployment**
+   - **Source:** `Deploy from a branch`
+   - **Branch:** `gh-pages` / `(root)`
+   - Salva
+4. Ogni push su `main` esegue il workflow `.github/workflows/deploy.yml`, che builda `dist/` e lo pubblica sul branch `gh-pages`
 
 Il sito sarà disponibile su: `https://<username>.github.io/La-Carta-d-Oro/`
 
+> **Importante:** non usare il branch `main` come sorgente Pages. Il branch `main` contiene il codice sorgente (Vite dev), non la build. Se Pages punta a `main`, il sito resta bianco perché il browser tenta di caricare `/src/main.tsx`.
+>
 > Il `base` path in `vite.config.ts` deve corrispondere esattamente al nome del repository GitHub (case-sensitive).
+
+Per rilanciare il deploy manualmente: **Actions → Deploy to GitHub Pages → Run workflow**.
 
 ## Pagine
 
