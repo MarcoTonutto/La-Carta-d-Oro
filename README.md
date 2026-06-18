@@ -37,14 +37,15 @@ Open [http://localhost:5173](http://localhost:5173).
 2. Push the code to the `main` branch
 3. Configure GitHub Pages **once**:
    - Go to **Settings → Pages → Build and deployment**
-   - **Source:** `Deploy from a branch`
-   - **Branch:** `gh-pages` / `(root)`
-   - Save
-4. Every push to `main` runs the `.github/workflows/deploy.yml` workflow, which builds `dist/` and publishes it to the `gh-pages` branch
+   - **Source:** `GitHub Actions`
+   - Do **not** pick a suggested workflow (Jekyll / Static HTML) — this repo already has `.github/workflows/deploy.yml`
+4. Push to `main` or run **Actions → Deploy to GitHub Pages → Run workflow**
+
+After the first successful run, the live URL appears at the top of the Pages settings page.
 
 The site will be available at: `https://<username>.github.io/La-Carta-d-Oro/`
 
-> **Important:** do not use the `main` branch as the Pages source. The `main` branch contains source code (Vite dev), not the build. If Pages points to `main`, the site stays blank because the browser tries to load `/src/main.tsx`.
+> **Important:** with **GitHub Actions** as the source, do not use **Deploy from a branch** on `main`. The workflow builds `dist/` and publishes it via `deploy-pages`.
 >
 > The `base` path in `vite.config.ts` must match the GitHub repository name exactly (case-sensitive).
 
