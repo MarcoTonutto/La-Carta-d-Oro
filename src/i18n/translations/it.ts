@@ -20,7 +20,7 @@ export const it: Translations = {
   home: {
     heroTitle: 'La Carta d\'Oro',
     heroSubtitle:
-      'Un concours d\'elegance per Magic: The Gathering. Cinque carte, giudici esigenti, eleganza e coerenza al posto della potenza competitiva.',
+      'Un concorso d\'eleganza e bellezza per Magic: The Gathering. Cinque carte, giudici esigenti, eleganza e coerenza al posto della potenza competitiva.',
     heroCta: 'Scopri come si gioca',
     formatTitle: 'Il formato',
     formatLead:
