@@ -11,7 +11,10 @@ Showcase site for the fan-made **La Carta d'Oro (5-Cards)** format — a concour
 
 ## Local development
 
+Requires **Node.js 26.3.0** (see `.nvmrc`).
+
 ```bash
+nvm use   # if using nvm
 npm install
 npm run dev
 ```
