@@ -1,59 +1,59 @@
 # La Carta d'Oro
 
-Sito vetrina per il formato fan-made **La Carta d'Oro (5-Cards)** — un concours d'elegance per Magic: The Gathering.
+Showcase site for the fan-made **La Carta d'Oro (5-Cards)** format — a concours d'elegance for Magic: The Gathering.
 
 ## Stack
 
 - React 19 + Vite + TypeScript
-- styled-components (atomic design + principi SOLID)
+- styled-components (atomic design + SOLID principles)
 - React Router
-- Vitest (test logica punteggi)
+- Vitest (scoring logic tests)
 
-## Sviluppo locale
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Apri [http://localhost:5173](http://localhost:5173).
+Open [http://localhost:5173](http://localhost:5173).
 
-## Script
+## Scripts
 
-| Comando | Descrizione |
-|---------|-------------|
-| `npm run dev` | Server di sviluppo |
-| `npm run build` | Build di produzione |
-| `npm run preview` | Anteprima build |
-| `npm test` | Esegue i test |
-| `npm run lint` | ESLint |
+| Command           | Description        |
+| ----------------- | ------------------ |
+| `npm run dev`     | Development server |
+| `npm run build`   | Production build   |
+| `npm run preview` | Preview build      |
+| `npm test`        | Run tests          |
+| `npm run lint`    | ESLint             |
 
-## Deploy su GitHub Pages
+## Deploy to GitHub Pages
 
-1. Crea un repository GitHub (il nome del repo deve coincidere con il `base` in `vite.config.ts`, es. `La-Carta-d-Oro`)
-2. Push del codice sul branch `main`
-3. Configura GitHub Pages **una sola volta**:
-   - Vai in **Settings → Pages → Build and deployment**
+1. Create a GitHub repository (the repo name must match the `base` in `vite.config.ts`, e.g. `La-Carta-d-Oro`)
+2. Push the code to the `main` branch
+3. Configure GitHub Pages **once**:
+   - Go to **Settings → Pages → Build and deployment**
    - **Source:** `Deploy from a branch`
    - **Branch:** `gh-pages` / `(root)`
-   - Salva
-4. Ogni push su `main` esegue il workflow `.github/workflows/deploy.yml`, che builda `dist/` e lo pubblica sul branch `gh-pages`
+   - Save
+4. Every push to `main` runs the `.github/workflows/deploy.yml` workflow, which builds `dist/` and publishes it to the `gh-pages` branch
 
-Il sito sarà disponibile su: `https://<username>.github.io/La-Carta-d-Oro/`
+The site will be available at: `https://<username>.github.io/La-Carta-d-Oro/`
 
-> **Importante:** non usare il branch `main` come sorgente Pages. Il branch `main` contiene il codice sorgente (Vite dev), non la build. Se Pages punta a `main`, il sito resta bianco perché il browser tenta di caricare `/src/main.tsx`.
+> **Important:** do not use the `main` branch as the Pages source. The `main` branch contains source code (Vite dev), not the build. If Pages points to `main`, the site stays blank because the browser tries to load `/src/main.tsx`.
 >
-> Il `base` path in `vite.config.ts` deve corrispondere esattamente al nome del repository GitHub (case-sensitive).
+> The `base` path in `vite.config.ts` must match the GitHub repository name exactly (case-sensitive).
 
-Per rilanciare il deploy manualmente: **Actions → Deploy to GitHub Pages → Run workflow**.
+To trigger a deploy manually: **Actions → Deploy to GitHub Pages → Run workflow**.
 
-## Pagine
+## Pages
 
-- **Home** — Presentazione del formato
-- **Regolamento** — Regole ufficiali complete
-- **Come si gioca** — Guida passo-passo + foglio votazione stampabile
-- **Calcolatore** — Calcolo punteggi (max 60) con tie-break su Originalità Ensemble
+- **Home** — Format overview
+- **Rules** — Full official rules
+- **How to play** — Step-by-step guide + printable scoring sheet
+- **Calculator** — Score calculation (max 60) with tie-break on Ensemble Originality
 
-## Note
+## Notes
 
-Formato fan-made, non affiliato con Wizards of the Coast.
+Fan-made format by Marco Tonutto, not affiliated with Wizards of the Coast.
