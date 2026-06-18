@@ -30,14 +30,14 @@ Apri [http://localhost:5173](http://localhost:5173).
 
 ## Deploy su GitHub Pages
 
-1. Crea un repository GitHub chiamato `la-carta-doro`
+1. Crea un repository GitHub (il nome del repo deve coincidere con il `base` in `vite.config.ts`, es. `La-Carta-d-Oro`)
 2. Push del codice sul branch `main`
 3. Vai in **Settings → Pages** e imposta **Source: GitHub Actions**
 4. Il workflow `.github/workflows/deploy.yml` builda e pubblica automaticamente
 
-Il sito sarà disponibile su: `https://<username>.github.io/la-carta-doro/`
+Il sito sarà disponibile su: `https://<username>.github.io/La-Carta-d-Oro/`
 
-> Il `base` path in `vite.config.ts` è già configurato per `/la-carta-doro/`.
+> Il `base` path in `vite.config.ts` deve corrispondere esattamente al nome del repository GitHub (case-sensitive).
 
 ## Pagine
 

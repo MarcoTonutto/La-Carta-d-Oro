@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/la-carta-doro/',
+  base: '/La-Carta-d-Oro/',
   test: {
     globals: true,
     environment: 'jsdom',
