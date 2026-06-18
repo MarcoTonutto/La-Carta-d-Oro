@@ -113,10 +113,11 @@ export function ScoreCalculatorForm() {
               type="number"
               value={playerCount}
               onChange={(v) => updatePlayerCount(Number(v))}
-              min={2}
-              max={8}
+              min={3}
+              max={20}
             />
           </SetupField>
+          <Text variant="muted">{t.calculator.playerCountHint}</Text>
           <Text variant="muted">
             {t.calculator.judgesHint.replace('{{count}}', String(judgeCount))}
           </Text>

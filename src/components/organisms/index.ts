@@ -4,6 +4,6 @@ export { RulesAccordion } from './RulesAccordion';
 export { Header } from './Header';
 export { Footer } from './Footer';
 export { ScoreCalculatorForm } from './ScoreCalculatorForm';
-export { ScoreSheetPreview } from './ScoreSheetPreview';
+export { ScoreSheetPrint } from './ScoreSheetPrint';
 export { CalculatorResults } from './CalculatorResults';
 export { VotingLegend } from './VotingLegend';

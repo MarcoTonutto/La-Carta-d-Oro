@@ -12,6 +12,8 @@ export interface Translations {
     home: string;
     play: string;
     calculator: string;
+    menuOpen: string;
+    menuClose: string;
   };
   footer: {
     tagline: string;
@@ -43,6 +45,9 @@ export interface Translations {
     sheetTitle: string;
     sheetDescription: string;
     playersLabel: string;
+    playersCountHint: string;
+    editPlayerNames: string;
+    hidePlayerNames: string;
     judgesLabel: string;
   };
   calculator: {
@@ -50,6 +55,7 @@ export interface Translations {
     pageLead: string;
     configTitle: string;
     playerCountLabel: string;
+    playerCountHint: string;
     judgesHint: string;
     designerNameLabel: string;
     phase1Title: string;
@@ -74,6 +80,7 @@ export interface Translations {
   scoreSheet: {
     printButton: string;
     title: string;
+    judgeSheetTitle: string;
     phase1Subtitle: string;
     designerLabel: string;
     cardColumn: string;
@@ -82,6 +89,15 @@ export interface Translations {
     cardLabel: string;
     judgeLabel: string;
     phase2Title: string;
+    recapTitle: string;
+    recapSubtitle: string;
+    playerColumn: string;
+    phase1SumColumn: string;
+    phase2SumColumn: string;
+    cardScoreColumn: string;
+    ensembleScoreColumn: string;
+    finalScoreColumn: string;
+    tieBreakNote: string;
   };
   playerScore: {
     champion: string;

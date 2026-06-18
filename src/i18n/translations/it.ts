@@ -10,6 +10,8 @@ export const it: Translations = {
     home: 'Home',
     play: 'Come si gioca',
     calculator: 'Calcolatore',
+    menuOpen: 'Apri menu',
+    menuClose: 'Chiudi menu',
   },
   footer: {
     tagline: 'La Carta d\'Oro — Formato fan-made per Magic: The Gathering',
@@ -59,6 +61,7 @@ export const it: Translations = {
       content:
         'Ogni partecipante seleziona segretamente esattamente 5 carte dalla propria collezione. Sono ammessi qualsiasi set, rarità e lingua, incluse versioni Foil, Secret Lair, Borderless, Retro Frame o Altered. Ogni lingua è permessa, ma si consiglia di scegliere carte che gli altri partecipanti sappiano leggere: altrimenti si rischia di ricevere voti bassi nella valutazione del Testo.',
       items: [
+        'Giocatori: da 3 a 10. Si può giocare anche con più partecipanti, ma i tempi di votazione diventano molto lunghi',
         'La selezione: esattamente 5 carte a partecipante, scelte in segreto',
         'Materiali: penna e carta (o smartphone) per registrare i punteggi assegnati agli avversari',
       ],
@@ -136,8 +139,12 @@ export const it: Translations = {
     calculatorCta: 'Vai al calcolatore punteggi',
     sheetTitle: 'Foglio di votazione stampabile',
     sheetDescription:
-      'Configurate il numero di giocatori e stampate il foglio per registrare i voti con penna e carta.',
+      'Configurate il numero di giocatori, assegnate i nomi e scaricate il foglio PDF per registrare i voti con penna e carta.',
     playersLabel: 'Giocatori',
+    playersCountHint:
+      'Consigliato: 3–10 giocatori. Oltre i 10 il gioco resta valido, ma i tempi di votazione aumentano molto.',
+    editPlayerNames: 'Modifica nomi giocatori',
+    hidePlayerNames: 'Nascondi nomi giocatori',
     judgesLabel: 'Giudici',
   },
   calculator: {
@@ -146,6 +153,8 @@ export const it: Translations = {
       'Inserite i voti dei giudici per calcolare il punteggio finale. Max 60 punti (30 carte + 30 ensemble).',
     configTitle: 'Configurazione',
     playerCountLabel: 'Numero giocatori',
+    playerCountHint:
+      'Consigliato 3–10. Oltre i 10 giocatori i tempi di votazione aumentano molto.',
     judgesHint: 'Giudici per designer: {{count}} (ogni giocatore non vota sé stesso)',
     designerNameLabel: 'Nome designer',
     phase1Title: 'Fase 1 — Passerella delle singole carte',
@@ -177,8 +186,9 @@ export const it: Translations = {
     },
   },
   scoreSheet: {
-    printButton: 'Stampa foglio di votazione',
-    title: 'La Carta d\'Oro — Foglio di votazione',
+    printButton: 'Scarica foglio di votazione (PDF)',
+    title: 'La Carta d\'Oro — Fogli di votazione',
+    judgeSheetTitle: 'Foglio giudice',
     phase1Subtitle: 'Fase 1: Passerella delle singole carte (0-10 per parametro)',
     designerLabel: 'Designer',
     cardColumn: 'Carta',
@@ -186,7 +196,18 @@ export const it: Translations = {
     totalColumn: 'Totale',
     cardLabel: 'Carta',
     judgeLabel: 'Giudice',
-    phase2Title: 'Fase 2: Ensemble',
+    phase2Title: 'Fase 2: Ensemble (0-10 per parametro)',
+    recapTitle: 'Riepilogo punteggi',
+    recapSubtitle:
+      'Usa questa pagina per sommare i voti di tutti i giudici e calcolare la classifica finale.',
+    playerColumn: 'Giocatore',
+    phase1SumColumn: 'Somma Fase 1',
+    phase2SumColumn: 'Somma Fase 2',
+    cardScoreColumn: 'Media carte (max 30)',
+    ensembleScoreColumn: 'Media ensemble (max 30)',
+    finalScoreColumn: 'Punteggio finale (max 60)',
+    tieBreakNote:
+      'Spareggio: vince il giocatore con la media più alta su Originalità ensemble.',
   },
   playerScore: {
     champion: 'Campione',

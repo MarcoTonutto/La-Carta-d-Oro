@@ -41,7 +41,7 @@ export function useScoreCalculator({
 
   const updatePlayerCount = useCallback(
     (count: number) => {
-      const safeCount = Math.max(2, Math.min(8, count));
+      const safeCount = Math.max(3, Math.min(20, count));
       const newJudgeCount = Math.max(safeCount - 1, 1);
       setPlayerCount(safeCount);
       setPlayers((prev) =>

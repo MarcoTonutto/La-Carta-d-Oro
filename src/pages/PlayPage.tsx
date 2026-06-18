@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { PhaseTimeline, ScoreSheetPreview } from '../components/organisms';
+import { PhaseTimeline, ScoreSheetPrint } from '../components/organisms';
 import { RuleSectionContent } from '../components/molecules';
 import { SectionLayout } from '../components/templates';
 import { Heading, Text, Button, Divider } from '../components/atoms';
@@ -33,17 +33,31 @@ const CalculatorCta = styled.div`
   margin-top: ${({ theme }) => theme.spacing.xl};
 `;
 
+const DEFAULT_NAME_PATTERN = /^(Giocatore|Player)\s+\d+$/;
+
 export function PlayPage() {
   const { t } = useTranslation();
   const [playerCount, setPlayerCount] = useState(3);
   const judgeCount = Math.max(playerCount - 1, 1);
-  const [playerNames, setPlayerNames] = useState<string[]>([]);
+  const [playerNames, setPlayerNames] = useState<string[]>(() =>
+    Array.from({ length: 3 }, (_, i) => `${t.common.player} ${i + 1}`),
+  );
 
   useEffect(() => {
-    setPlayerNames(
-      Array.from({ length: playerCount }, (_, i) => `${t.common.player} ${i + 1}`),
+    setPlayerNames((prev) =>
+      Array.from({ length: playerCount }, (_, i) => {
+        const existing = prev[i];
+        if (existing && !DEFAULT_NAME_PATTERN.test(existing)) {
+          return existing;
+        }
+        return `${t.common.player} ${i + 1}`;
+      }),
     );
   }, [playerCount, t.common.player]);
+
+  const handlePlayerNameChange = (index: number, name: string) => {
+    setPlayerNames((prev) => prev.map((n, i) => (i === index ? name : n)));
+  };
 
   return (
     <>
@@ -103,18 +117,22 @@ export function PlayPage() {
               value={playerCount}
               onChange={(e) => setPlayerCount(Number(e.target.value))}
             >
-              {[2, 3, 4, 5, 6, 7, 8].map((n) => (
+              {[3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
                 <option key={n} value={n}>
                   {n}
                 </option>
               ))}
             </StyledSelect>
           </Field>
+          <Text variant="small">{t.play.playersCountHint}</Text>
           <Text variant="small">
             {t.play.judgesLabel}: {judgeCount}
           </Text>
         </SheetConfig>
-        <ScoreSheetPreview playerNames={playerNames} judgeCount={judgeCount} />
+        <ScoreSheetPrint
+          playerNames={playerNames}
+          onPlayerNameChange={handlePlayerNameChange}
+        />
       </SectionLayout>
     </>
   );

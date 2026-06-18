@@ -8,6 +8,8 @@ const Layout = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 `;
 
 const Main = styled.main`

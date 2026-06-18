@@ -10,6 +10,8 @@ export const en: Translations = {
     home: 'Home',
     play: 'How to Play',
     calculator: 'Calculator',
+    menuOpen: 'Open menu',
+    menuClose: 'Close menu',
   },
   footer: {
     tagline: 'La Carta d\'Oro — Fan-made format for Magic: The Gathering',
@@ -59,6 +61,7 @@ export const en: Translations = {
       content:
         'Each participant secretly selects exactly 5 cards from their collection. Any set, rarity, and language is allowed, including Foil, Secret Lair, Borderless, Retro Frame, or Altered versions. Every language is permitted, but it is recommended to choose cards that other participants can read — otherwise you risk low scores in the Text evaluation.',
       items: [
+        'Players: 3 to 10. You can play with more participants, but voting will take significantly longer',
         'The Set: exactly 5 cards per participant, chosen in secret',
         'Materials: pen and paper (or smartphone) to record the scores awarded to opponents',
       ],
@@ -136,8 +139,12 @@ export const en: Translations = {
     calculatorCta: 'Go to score calculator',
     sheetTitle: 'Printable score sheet',
     sheetDescription:
-      'Configure the number of players and print the sheet to record votes with pen and paper.',
+      'Configure the number of players, assign names, and download the PDF sheet to record votes with pen and paper.',
     playersLabel: 'Players',
+    playersCountHint:
+      'Recommended: 3–10 players. The game still works with more, but voting takes much longer.',
+    editPlayerNames: 'Edit player names',
+    hidePlayerNames: 'Hide player names',
     judgesLabel: 'Judges',
   },
   calculator: {
@@ -146,6 +153,8 @@ export const en: Translations = {
       'Enter judge votes to calculate the final score. Max 60 points (30 cards + 30 ensemble).',
     configTitle: 'Configuration',
     playerCountLabel: 'Number of players',
+    playerCountHint:
+      'Recommended 3–10. With more than 10 players, voting takes significantly longer.',
     judgesHint:
       'Judges per designer: {{count}} (each player cannot vote for themselves)',
     designerNameLabel: 'Designer name',
@@ -178,8 +187,9 @@ export const en: Translations = {
     },
   },
   scoreSheet: {
-    printButton: 'Print score sheet',
-    title: 'La Carta d\'Oro — Score sheet',
+    printButton: 'Download score sheet (PDF)',
+    title: 'La Carta d\'Oro — Score sheets',
+    judgeSheetTitle: 'Judge sheet',
     phase1Subtitle: 'Phase 1: Single card runway (0-10 per parameter)',
     designerLabel: 'Designer',
     cardColumn: 'Card',
@@ -187,7 +197,18 @@ export const en: Translations = {
     totalColumn: 'Total',
     cardLabel: 'Card',
     judgeLabel: 'Judge',
-    phase2Title: 'Phase 2: Ensemble',
+    phase2Title: 'Phase 2: Ensemble (0-10 per parameter)',
+    recapTitle: 'Score recap',
+    recapSubtitle:
+      'Use this page to tally all judge sheets and compute final standings. Sum Phase 1 and Phase 2 votes per designer, then calculate averages.',
+    playerColumn: 'Player',
+    phase1SumColumn: 'Phase 1 sum',
+    phase2SumColumn: 'Phase 2 sum',
+    cardScoreColumn: 'Avg cards (max 30)',
+    ensembleScoreColumn: 'Avg ensemble (max 30)',
+    finalScoreColumn: 'Final score (max 60)',
+    tieBreakNote:
+      'Tie-break: the player with the highest average Ensemble Originality score wins.',
   },
   playerScore: {
     champion: 'Champion',
