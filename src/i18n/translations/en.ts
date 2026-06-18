@@ -53,7 +53,7 @@ export const en: Translations = {
   play: {
     pageTitle: 'How to Play',
     pageLead:
-      'La Carta d\'Oro (5-Cards) — Free-for-all. Each participant secretly selects and presents their own Set of 5 cards. Turn by turn, one player showcases their pieces while everyone else at the table acts as a Judge (players cannot vote for themselves). Inspired by the great European concours d\'elegance, this format rewards class, coherence, and visual originality over the raw power of competitive play.',
+      'La Carta d\'Oro (5-Cards) — Free-for-all. Each participant secretly selects and presents their own Set of 5 cards. Turn by turn, one player acts as Curator of their own exhibition while everyone else at the table acts as a Judge (players cannot vote for themselves). Inspired by the great European concours d\'elegance, this format rewards class, coherence, and visual originality over the raw power of competitive play.',
     setupTitle: 'Setup and Requirements',
     setup: {
       id: 'setup',
@@ -73,7 +73,7 @@ export const en: Translations = {
         number: 1,
         title: 'Phase 1: The Single Card Runway',
         description:
-          'One by one, players take turns becoming the Designer. The Designer presents their first card to the table. The Judges analyze the piece and award a score from 0 to 10 based on three parameters. This process is repeated for all 5 cards of the current Designer.',
+          'One by one, players take turns becoming the Curator of their own exhibition. The Curator presents their first card to the table. The Judges analyze the piece and award a score from 0 to 10 based on three parameters. This process is repeated for all 5 cards of the current Curator. Below are the 3 parameters to base your vote on.',
         criteria: [
           {
             id: 'art',
@@ -100,7 +100,7 @@ export const en: Translations = {
         number: 2,
         title: 'Phase 2: Judging the Ensemble',
         description:
-          'After showcasing the cards individually, the Designer lines up all 5 cards on the table, side by side, revealing their "exhibition" in its entirety. At this point, they may briefly explain the concept behind their selection.',
+          'After showcasing the cards individually, the Curator lines up all 5 cards on the table, side by side, revealing their "exhibition" in its entirety. Like an art exhibition curator, they may briefly explain the concept behind their selection. Below are the 3 parameters to base your ensemble vote on:',
         criteria: [
           {
             id: 'visualCoherence',
@@ -156,15 +156,15 @@ export const en: Translations = {
     playerCountHint:
       'Recommended 3–10. With more than 10 players, voting takes significantly longer.',
     judgesHint:
-      'Judges per designer: {{count}} (each player cannot vote for themselves)',
-    designerNameLabel: 'Designer name',
+      'Judges per curator: {{count}} (each player cannot vote for themselves)',
+    curatorNameLabel: 'Curator name',
     phase1Title: 'Phase 1 — Single card runway',
     phase2Title: 'Phase 2 — Judging the ensemble',
     ensembleLabel: 'Ensemble',
     standingsTitle: 'Standings',
     tieBreakNotice: 'Tie broken by highest Ensemble Originality score',
     votingTitle: 'Enter votes',
-    selectDesignerLabel: 'Designer to evaluate',
+    selectCuratorLabel: 'Curator to evaluate',
     selectJudgeLabel: 'Judge voting',
     previousPair: '← Previous',
     nextPair: 'Next →',
@@ -174,7 +174,7 @@ export const en: Translations = {
     hideResults: 'Hide standings',
     legendTitle: 'Voting parameters guide',
     legendIntro:
-      'Each judge assigns a score from 0 to 10 for every parameter. Use the + and − buttons to adjust votes. 0 = absent or irrelevant, 10 = excellent. You cannot vote for yourself when you are the Designer.',
+      'Each judge assigns a score from 0 to 10 for every parameter. Use the + and − buttons to adjust votes. 0 = absent or irrelevant, 10 = excellent. You cannot vote for yourself when you are the Curator.',
     cardParameterLabels: {
       art: 'Art',
       text: 'Text',
@@ -191,7 +191,7 @@ export const en: Translations = {
     title: 'La Carta d\'Oro — Score sheets',
     judgeSheetTitle: 'Judge sheet',
     phase1Subtitle: 'Phase 1: Single card runway (0-10 per parameter)',
-    designerLabel: 'Designer',
+    curatorLabel: 'Curator',
     cardColumn: 'Card',
     judgeColumn: 'Judge',
     totalColumn: 'Total',
@@ -200,7 +200,7 @@ export const en: Translations = {
     phase2Title: 'Phase 2: Ensemble (0-10 per parameter)',
     recapTitle: 'Score recap',
     recapSubtitle:
-      'Use this page to tally all judge sheets and compute final standings. Sum Phase 1 and Phase 2 votes per designer, then calculate averages.',
+      'Use this page to tally all judge sheets and compute final standings. Sum Phase 1 and Phase 2 votes per curator, then calculate averages.',
     playerColumn: 'Player',
     phase1SumColumn: 'Phase 1 sum',
     phase2SumColumn: 'Phase 2 sum',
@@ -220,5 +220,7 @@ export const en: Translations = {
   common: {
     player: 'Player',
     judge: 'Judge',
+    appName: 'La Carta d\'Oro',
+    loading: 'Loading cards…',
   },
 };

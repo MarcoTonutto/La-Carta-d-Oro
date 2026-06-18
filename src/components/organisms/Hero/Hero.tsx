@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Heading, Text, Button } from '../../atoms';
+import { FloatingCards } from '../FloatingCards';
 import { sectionPadding } from '../../../styles/mixins';
 
 export interface HeroProps {
@@ -36,6 +37,7 @@ const HeroSection = styled.section`
 
 const Content = styled.div`
   position: relative;
+  z-index: 1;
   max-width: 800px;
   display: flex;
   flex-direction: column;
@@ -54,6 +56,7 @@ const CtaWrapper = styled.div`
 export function Hero({ title, subtitle, ctaLabel, ctaTo }: HeroProps) {
   return (
     <HeroSection>
+      <FloatingCards />
       <Content>
         <Heading level={1} variant="display">
           {title}

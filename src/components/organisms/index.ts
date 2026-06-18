@@ -1,4 +1,6 @@
 export { Hero } from './Hero';
+export { FloatingCards } from './FloatingCards';
+export { AppLoader } from './AppLoader';
 export { PhaseTimeline } from './PhaseTimeline';
 export { RulesAccordion } from './RulesAccordion';
 export { Header } from './Header';

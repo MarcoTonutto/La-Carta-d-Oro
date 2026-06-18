@@ -54,13 +54,13 @@ export function ScoreCalculatorForm() {
     updateEnsembleVote,
   } = useScoreCalculator({ playerPrefix: t.common.player });
 
-  const [selectedDesignerIndex, setSelectedDesignerIndex] = useState(0);
+  const [selectedCuratorIndex, setSelectedCuratorIndex] = useState(0);
   const [selectedJudgeIndex, setSelectedJudgeIndex] = useState(0);
   const [showPlayerNames, setShowPlayerNames] = useState(false);
   const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
-    setSelectedDesignerIndex((index) =>
+    setSelectedCuratorIndex((index) =>
       Math.min(index, Math.max(players.length - 1, 0)),
     );
     setSelectedJudgeIndex((index) =>
@@ -71,23 +71,23 @@ export function ScoreCalculatorForm() {
   const cardLabels = t.calculator.cardParameterLabels;
   const ensembleLabels = t.calculator.ensembleParameterLabels;
 
-  const activePlayer = players[selectedDesignerIndex];
+  const activePlayer = players[selectedCuratorIndex];
   const activeVote = activePlayer?.votes[selectedJudgeIndex];
 
   const totalPairs = players.length * judgeCount;
   const currentPairIndex =
-    selectedDesignerIndex * judgeCount + selectedJudgeIndex;
+    selectedCuratorIndex * judgeCount + selectedJudgeIndex;
 
   const goToPair = useCallback(
     (pairIndex: number) => {
       const safeIndex = Math.max(0, Math.min(pairIndex, totalPairs - 1));
-      setSelectedDesignerIndex(Math.floor(safeIndex / judgeCount));
+      setSelectedCuratorIndex(Math.floor(safeIndex / judgeCount));
       setSelectedJudgeIndex(safeIndex % judgeCount);
     },
     [judgeCount, totalPairs],
   );
 
-  const designerOptions = players.map((player, index) => ({
+  const curatorOptions = players.map((player, index) => ({
     value: index,
     label: player.name,
   }));
@@ -139,7 +139,7 @@ export function ScoreCalculatorForm() {
             {players.map((player, index) => (
               <NameField key={index}>
                 <Label htmlFor={`player-name-${index}`}>
-                  {t.calculator.designerNameLabel} {index + 1}
+                  {t.calculator.curatorNameLabel} {index + 1}
                 </Label>
                 <Input
                   id={`player-name-${index}`}
@@ -157,13 +157,13 @@ export function ScoreCalculatorForm() {
       <Card padding="lg">
         <Heading level={3}>{t.calculator.votingTitle}</Heading>
         <CalculatorPairSelector
-          designerLabel={t.calculator.selectDesignerLabel}
+          curatorLabel={t.calculator.selectCuratorLabel}
           judgeLabel={t.calculator.selectJudgeLabel}
-          designerOptions={designerOptions}
+          curatorOptions={curatorOptions}
           judgeOptions={judgeOptions}
-          selectedDesignerIndex={selectedDesignerIndex}
+          selectedCuratorIndex={selectedCuratorIndex}
           selectedJudgeIndex={selectedJudgeIndex}
-          onDesignerChange={setSelectedDesignerIndex}
+          onCuratorChange={setSelectedCuratorIndex}
           onJudgeChange={setSelectedJudgeIndex}
           onPrevious={() => goToPair(currentPairIndex - 1)}
           onNext={() => goToPair(currentPairIndex + 1)}
@@ -175,7 +175,7 @@ export function ScoreCalculatorForm() {
       </Card>
 
       <CalculatorVotePanel
-        designerName={activePlayer.name}
+        curatorName={activePlayer.name}
         judgeLabel={`${t.common.judge} ${selectedJudgeIndex + 1}`}
         vote={activeVote}
         phase1Title={t.calculator.phase1Title}
@@ -186,7 +186,7 @@ export function ScoreCalculatorForm() {
         ensembleParameterLabels={ensembleLabels}
         onCardVoteChange={(cardIndex, field, value) =>
           updateCardVote(
-            selectedDesignerIndex,
+            selectedCuratorIndex,
             selectedJudgeIndex,
             cardIndex,
             field,
@@ -195,7 +195,7 @@ export function ScoreCalculatorForm() {
         }
         onEnsembleVoteChange={(field, value) =>
           updateEnsembleVote(
-            selectedDesignerIndex,
+            selectedCuratorIndex,
             selectedJudgeIndex,
             field,
             value,

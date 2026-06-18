@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { Label, Select, Button } from '../../atoms';
 
 export interface CalculatorPairSelectorProps {
-  designerLabel: string;
+  curatorLabel: string;
   judgeLabel: string;
-  designerOptions: { value: number; label: string }[];
+  curatorOptions: { value: number; label: string }[];
   judgeOptions: { value: number; label: string }[];
-  selectedDesignerIndex: number;
+  selectedCuratorIndex: number;
   selectedJudgeIndex: number;
-  onDesignerChange: (index: number) => void;
+  onCuratorChange: (index: number) => void;
   onJudgeChange: (index: number) => void;
   onPrevious: () => void;
   onNext: () => void;
@@ -55,13 +55,13 @@ const NavRow = styled.div`
 `;
 
 export function CalculatorPairSelector({
-  designerLabel,
+  curatorLabel,
   judgeLabel,
-  designerOptions,
+  curatorOptions,
   judgeOptions,
-  selectedDesignerIndex,
+  selectedCuratorIndex,
   selectedJudgeIndex,
-  onDesignerChange,
+  onCuratorChange,
   onJudgeChange,
   onPrevious,
   onNext,
@@ -74,12 +74,12 @@ export function CalculatorPairSelector({
     <div>
       <Grid>
         <Field>
-          <Label htmlFor="calc-designer">{designerLabel}</Label>
+          <Label htmlFor="calc-curator">{curatorLabel}</Label>
           <Select
-            id="calc-designer"
-            value={selectedDesignerIndex}
-            onChange={(v) => onDesignerChange(Number(v))}
-            options={designerOptions}
+            id="calc-curator"
+            value={selectedCuratorIndex}
+            onChange={(v) => onCuratorChange(Number(v))}
+            options={curatorOptions}
           />
         </Field>
         <Field>

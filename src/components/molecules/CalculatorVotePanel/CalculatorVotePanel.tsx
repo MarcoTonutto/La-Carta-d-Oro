@@ -4,7 +4,7 @@ import { ScoreInputRow } from '../ScoreInputRow';
 import type { CardVote, EnsembleVote, JudgeVotes } from '../../../types/scoring';
 
 export interface CalculatorVotePanelProps {
-  designerName: string;
+  curatorName: string;
   judgeLabel: string;
   vote: JudgeVotes;
   phase1Title: string;
@@ -50,7 +50,7 @@ const ENSEMBLE_FIELDS = [
 ] as const;
 
 export function CalculatorVotePanel({
-  designerName,
+  curatorName,
   judgeLabel,
   vote,
   phase1Title,
@@ -66,7 +66,7 @@ export function CalculatorVotePanel({
     <Panel padding="lg">
       <ContextBanner>
         <Text variant="small">
-          {judgeLabel} → <ContextName>{designerName}</ContextName>
+          {judgeLabel} → <ContextName>{curatorName}</ContextName>
         </Text>
       </ContextBanner>
 

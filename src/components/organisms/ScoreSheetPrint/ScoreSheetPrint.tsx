@@ -42,7 +42,7 @@ export function ScoreSheetPrint({
       judgeSheetTitle: t.scoreSheet.judgeSheetTitle,
       phase1Subtitle: t.scoreSheet.phase1Subtitle,
       phase2Title: t.scoreSheet.phase2Title,
-      designerLabel: t.scoreSheet.designerLabel,
+      curatorLabel: t.scoreSheet.curatorLabel,
       cardColumn: t.scoreSheet.cardColumn,
       totalColumn: t.scoreSheet.totalColumn,
       cardLabel: t.scoreSheet.cardLabel,

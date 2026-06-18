@@ -57,14 +57,14 @@ export interface Translations {
     playerCountLabel: string;
     playerCountHint: string;
     judgesHint: string;
-    designerNameLabel: string;
+    curatorNameLabel: string;
     phase1Title: string;
     phase2Title: string;
     ensembleLabel: string;
     standingsTitle: string;
     tieBreakNotice: string;
     votingTitle: string;
-    selectDesignerLabel: string;
+    selectCuratorLabel: string;
     selectJudgeLabel: string;
     previousPair: string;
     nextPair: string;
@@ -82,7 +82,7 @@ export interface Translations {
     title: string;
     judgeSheetTitle: string;
     phase1Subtitle: string;
-    designerLabel: string;
+    curatorLabel: string;
     cardColumn: string;
     judgeColumn: string;
     totalColumn: string;
@@ -109,6 +109,8 @@ export interface Translations {
   common: {
     player: string;
     judge: string;
+    appName: string;
+    loading: string;
   };
 }
 

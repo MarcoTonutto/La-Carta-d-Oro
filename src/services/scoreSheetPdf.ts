@@ -6,7 +6,7 @@ export interface ScoreSheetPdfLabels {
   judgeSheetTitle: string;
   phase1Subtitle: string;
   phase2Title: string;
-  designerLabel: string;
+  curatorLabel: string;
   cardColumn: string;
   totalColumn: string;
   cardLabel: string;
@@ -69,9 +69,9 @@ function buildPhase1Rows(labels: ScoreSheetPdfLabels): string[][] {
   ]);
 }
 
-function addDesignerBlock(
+function addCuratorBlock(
   doc: jsPDF,
-  designerName: string,
+  curatorName: string,
   labels: ScoreSheetPdfLabels,
   startY: number,
 ): number {
@@ -84,7 +84,7 @@ function addDesignerBlock(
 
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(12);
-  doc.text(`${labels.designerLabel}: ${designerName}`, PAGE_MARGIN, y);
+  doc.text(`${labels.curatorLabel}: ${curatorName}`, PAGE_MARGIN, y);
   y += 6;
 
   doc.setFont('helvetica', 'normal');
@@ -146,7 +146,7 @@ function addDesignerBlock(
 function addJudgeSheet(
   doc: jsPDF,
   judgeName: string,
-  designersToScore: string[],
+  curatorsToScore: string[],
   labels: ScoreSheetPdfLabels,
   isFirstPage: boolean,
 ): void {
@@ -161,8 +161,8 @@ function addJudgeSheet(
   doc.text(`${labels.judgeSheetTitle}: ${judgeName}`, PAGE_MARGIN, y);
   y += 10;
 
-  designersToScore.forEach((designer) => {
-    y = addDesignerBlock(doc, designer, labels, y);
+  curatorsToScore.forEach((curator) => {
+    y = addCuratorBlock(doc, curator, labels, y);
   });
 }
 
@@ -238,9 +238,9 @@ export function downloadScoreSheetPdf(
   doc.text(labels.title, PAGE_MARGIN, 20);
 
   playerNames.forEach((judgeName, judgeIndex) => {
-    const designersToScore = playerNames.filter((_, index) => index !== judgeIndex);
+    const curatorsToScore = playerNames.filter((_, index) => index !== judgeIndex);
 
-    addJudgeSheet(doc, judgeName, designersToScore, labels, judgeIndex === 0);
+    addJudgeSheet(doc, judgeName, curatorsToScore, labels, judgeIndex === 0);
   });
 
   addRecapPage(doc, playerNames, labels);

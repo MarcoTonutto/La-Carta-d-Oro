@@ -53,7 +53,7 @@ export const it: Translations = {
   play: {
     pageTitle: 'Come si gioca',
     pageLead:
-      'La Carta d\'Oro (5-Cards) — Tutti contro tutti. Ogni partecipante seleziona segretamente e presenta la propria selezione di 5 carte. A turno, un giocatore presenta le proprie carte mentre tutti gli altri al tavolo fungono da Giudici (nessuno può votare sé stesso). Ispirato ai grandi concours d\'elegance europei, questo formato premia classe, coerenza e originalità visiva più della potenza competitiva.',
+      'La Carta d\'Oro (5-Cards) — Tutti contro tutti. Ogni partecipante seleziona segretamente e presenta la propria selezione di 5 carte. A turno, un giocatore fa da Curatore della propria mostra mentre tutti gli altri al tavolo fungono da Giudici (nessuno può votare sé stesso). Ispirato ai grandi concours d\'elegance europei, questo formato premia classe, coerenza e originalità visiva più della potenza competitiva.',
     setupTitle: 'Preparazione e requisiti',
     setup: {
       id: 'setup',
@@ -73,7 +73,7 @@ export const it: Translations = {
         number: 1,
         title: 'Fase 1: Passerella delle singole carte',
         description:
-          'A turno, ogni giocatore diventa il Designer. Il Designer presenta la prima carta al tavolo. I Giudici analizzano il pezzo e assegnano un punteggio da 0 a 10 su tre parametri. Si ripete per tutte e 5 le carte del Designer in turno.',
+          'A turno, ogni giocatore diventa Curatore della propria mostra. Il Curatore presenta la prima carta al tavolo. I Giudici analizzano il pezzo e assegnano un punteggio da 0 a 10 su tre parametri. Si ripete per tutte e 5 le carte del Curatore in turno. Di seguito i 3 parametri sul quale basare la votazione.',
         criteria: [
           {
             id: 'art',
@@ -100,7 +100,7 @@ export const it: Translations = {
         number: 2,
         title: 'Fase 2: Valutazione dell\'ensemble',
         description:
-          'Dopo aver presentato le carte singolarmente, il Designer allinea tutte e 5 le carte sul tavolo, affiancate, rivelando la propria "mostra" nella sua interezza. A questo punto può spiegare brevemente il concetto dietro la selezione.',
+          'Dopo aver presentato le carte singolarmente, il Curatore allinea tutte e 5 le carte sul tavolo, affiancate, rivelando la propria "mostra" nella sua interezza. Come in una mostra d\'arte, può spiegare brevemente il concetto dietro la selezione. Di seguito i 3 parametri sul quale basare la votazione dell\'ensamble:',
         criteria: [
           {
             id: 'visualCoherence',
@@ -155,15 +155,15 @@ export const it: Translations = {
     playerCountLabel: 'Numero giocatori',
     playerCountHint:
       'Consigliato 3–10. Oltre i 10 giocatori i tempi di votazione aumentano molto.',
-    judgesHint: 'Giudici per designer: {{count}} (ogni giocatore non vota sé stesso)',
-    designerNameLabel: 'Nome designer',
+    judgesHint: 'Giudici per curatore: {{count}} (ogni giocatore non vota sé stesso)',
+    curatorNameLabel: 'Nome curatore',
     phase1Title: 'Fase 1 — Passerella delle singole carte',
     phase2Title: 'Fase 2 — Valutazione dell\'ensemble',
     ensembleLabel: 'Ensemble',
     standingsTitle: 'Classifica',
     tieBreakNotice: 'Parità risolta con spareggio sull\'Originalità ensemble',
     votingTitle: 'Inserimento voti',
-    selectDesignerLabel: 'Designer da valutare',
+    selectCuratorLabel: 'Curatore da valutare',
     selectJudgeLabel: 'Giudice che vota',
     previousPair: '← Precedente',
     nextPair: 'Successivo →',
@@ -173,7 +173,7 @@ export const it: Translations = {
     hideResults: 'Nascondi classifica',
     legendTitle: 'Legenda parametri di voto',
     legendIntro:
-      'Ogni giudice assegna un punteggio da 0 a 10 per ogni parametro. Usate i pulsanti + e − per modificare il voto. 0 = assente o irrilevante, 10 = eccellente. Nessuno può votare sé stesso quando è Designer.',
+      'Ogni giudice assegna un punteggio da 0 a 10 per ogni parametro. Usate i pulsanti + e − per modificare il voto. 0 = assente o irrilevante, 10 = eccellente. Nessuno può votare sé stesso quando è Curatore.',
     cardParameterLabels: {
       art: 'Arte',
       text: 'Testo',
@@ -190,7 +190,7 @@ export const it: Translations = {
     title: 'La Carta d\'Oro — Fogli di votazione',
     judgeSheetTitle: 'Foglio giudice',
     phase1Subtitle: 'Fase 1: Passerella delle singole carte (0-10 per parametro)',
-    designerLabel: 'Designer',
+    curatorLabel: 'Curatore',
     cardColumn: 'Carta',
     judgeColumn: 'Giudice',
     totalColumn: 'Totale',
@@ -219,5 +219,7 @@ export const it: Translations = {
   common: {
     player: 'Giocatore',
     judge: 'Giudice',
+    appName: 'La Carta d\'Oro',
+    loading: 'Caricamento carte…',
   },
 };
